@@ -1,0 +1,3 @@
+# Опційно: Ultralytics SAM (make setup-sam)
+-r requirements.txt
+ultralytics>=8.3.0

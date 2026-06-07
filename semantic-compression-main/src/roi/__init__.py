@@ -1,0 +1,1 @@
+"""Виділення ROI (deep learning)."""

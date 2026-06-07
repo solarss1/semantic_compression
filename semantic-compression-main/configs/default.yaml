@@ -1,0 +1,32 @@
+# Налаштування desktop-застосунку
+
+roi:
+  method: saliency_u2net
+  device: cpu
+  saliency_model: u2net
+  segmentation_model: deeplabv3_resnet50
+  use_class_weights: true
+  segmentation_softmax_blend: true
+  class_priority:
+    high: [1]
+    medium: [2, 3, 4, 6, 8, 16, 17, 18, 19]
+    low: [62, 63, 64, 65, 66, 67]
+  priority_values:
+    high: 1.0
+    medium: 0.75
+    low: 0.45
+  target_classes: []
+  mask_smooth_sigma: 5.0
+  sam_model: mobile_sam.pt
+
+compression:
+  quality_roi: 85
+  quality_background: 35
+  tile_size: 32
+  quality_uniform: 50
+  png_compress_level: 6
+
+app:
+  cache_dir: .cache/roi
+  max_image_pixels: 393216   # 768×512
+  samples_dir: data/samples
